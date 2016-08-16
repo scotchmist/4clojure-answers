@@ -3,14 +3,12 @@
   (conj l x)) '() %1) [1 2 3 4 5]) [5 4 3 2 1])
 
 
-;Write a function which returns the sum of a sequence of numbers.
+;;Write a function which returns the sum of a sequence of numbers.
 (= (#(reduce + %) [1 2 3]) 6)
-
 
 
 ;;Write a function which returns only the odd numbers from a sequence.
 (= (#(filter odd? %) #{1 2 3 4 5}) '(1 3 5))
-
 
 
 ;;Write a function which returns the first X fibonacci numbers.
@@ -24,3 +22,5 @@
 (true? ((fn [x] (= (reverse x) (seq x))) "racecar"))
 
 
+;;Write a function which takes a variable number of parameters and returns the maximum value.
+(fn [& x] apply (last (sort x)))
