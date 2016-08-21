@@ -24,3 +24,7 @@
 
 ;;Write a function which takes a variable number of parameters and returns the maximum value.
 (fn [& x] apply (last (sort x)))
+
+
+;;Write a function which drops every Nth item from a sequence.
+(= (#(filter (fn [x] (not= (mod (inc (.indexOf %1 x)) %2) 0)) %1) [:a :b :c :d :e :f] 2) [:a :c :e])
