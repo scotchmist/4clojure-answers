@@ -28,3 +28,11 @@
 
 ;;Write a function which drops every Nth item from a sequence.
 (= (#(filter (fn [x] (not= (mod (inc (.indexOf %1 x)) %2) 0)) %1) [:a :b :c :d :e :f] 2) [:a :c :e])
+
+
+;;Write a function which flattens a sequence.
+(= (#(remove coll? (tree-seq coll? identity %)) '((1 2) 3 [4 [5 6]])) '(1 2 3 4 5 6))
+
+
+
+
